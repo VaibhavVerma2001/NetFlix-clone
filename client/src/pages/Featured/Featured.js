@@ -17,7 +17,7 @@ function Featured(props) {
                 const res = await axios.get(`http://localhost:5000/api/movies/random?type=${type}`, {
                     headers: {
                         token:
-                            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2JhY2NlZDk4YTZjZmFlMmU0MmNjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDMyMTYwMywiZXhwIjoxNjc0NzUzNjAzfQ.7hFDwb3XJeb3CVuH0YYBllFSNlcSuIJqOJl-H3RM-_g"
+                            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2JhY2NlZDk4YTZjZmFlMmU0MmNjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDg0NzM4OCwiZXhwIjoxNjc1Mjc5Mzg4fQ.EnDlFKBU2Yq3ugt4y20FI8mlFLNDxYNt2vgUWRvaX4Y"
                     },
                 });
                 // console.log(res.data);

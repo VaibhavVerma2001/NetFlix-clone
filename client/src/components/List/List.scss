@@ -1,0 +1,45 @@
+.list{
+    widows: 100%;
+    margin-top: 20px;
+
+    .listTitle{
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
+
+
+    .wrapper{
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .list-container{
+            display: flex;
+            margin-left: 50px;
+            transform: translateX(0px);
+            transition: all 1s ease;
+        }
+
+        .slider-arrow{
+            width: 50px;
+            height: 100%;
+            background-color: rgb(22, 22, 22, 0.5);
+            color: white;
+            z-index: 99;
+            position: absolute;
+            cursor: pointer;
+
+        }
+
+        .left{
+            left: 0;
+        }
+
+        .right{
+            right: 0;
+        }
+    }
+}

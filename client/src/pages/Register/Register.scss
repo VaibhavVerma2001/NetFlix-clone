@@ -94,4 +94,13 @@
         }
     }
 
+    .error{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: red;
+        position: absolute;
+        bottom: 20%;
+    }
+
 }

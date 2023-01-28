@@ -21,7 +21,7 @@ function Home(props) {
           {
             headers: {
               token:
-              "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2JhY2NlZDk4YTZjZmFlMmU0MmNjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDg0NzM4OCwiZXhwIjoxNjc1Mjc5Mzg4fQ.EnDlFKBU2Yq3ugt4y20FI8mlFLNDxYNt2vgUWRvaX4Y"
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
             },
           }
         );

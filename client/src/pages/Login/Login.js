@@ -1,28 +1,19 @@
-import "./Login.scss";
-import { useState} from 'react';
-import axios from "axios";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { login } from "../../context/authContext/apiCalls";
+import { Link } from "react-router-dom";
+import './Login.scss';
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { dispatch } = useContext(AuthContext);
 
 
-    const handleLogin = async (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
-        try {
-            // eslint-disable-next-line
-            const res = await axios.post("http://localhost:5000/api/auth/login", {
-                username: email,
-                password: password
-            });
-            const data = res.data;
-            console.log(data);
-            window.localStorage.setItem("login",true);
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
+        login({ email, password }, dispatch);
+      };
 
     return (
         <div className="login">
@@ -41,7 +32,7 @@ export default function Login() {
                     <input type="password" placeholder="Password" required onChange={e => setPassword(e.target.value)} />
                     <button className="loginButton">Sign In</button>
                     <span>
-                        New to Netflix? <b>Sign up now.</b>
+                        New to Netflix? <Link className="linkregister" to="/register"><b>Sign up now.</b></Link>
                     </span>
                     <small>
                         This page is protected by Google reCAPTCHA to ensure you're not a

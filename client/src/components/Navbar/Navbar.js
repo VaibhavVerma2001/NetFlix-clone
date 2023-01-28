@@ -2,11 +2,15 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { logout } from '../../context/authContext/AuthAction';
+
 import "./Navbar.scss";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const { dispatch } = useContext(AuthContext);
 
     // to check when we r on top of page navbar remains transparent and when we scroll it becomes black
 
@@ -66,7 +70,7 @@ const Navbar = () => {
                         <ArrowDropDownIcon className="icon" />
                         <div className="options">
                             <span>Settings</span>
-                            <span>Logout</span>
+                            <span onClick={()=>dispatch(logout())}>Logout</span>
                         </div>
                     </div>
                 </div>
